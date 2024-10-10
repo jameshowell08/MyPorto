@@ -1,16 +1,16 @@
 {
-  "homepage": "https://jameshowell08.github.io/myporto",
+  "homepage": "http://jameshowell08.github.io/MyPorto",
   "name": "myporto",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "framer-motion": "^11.11.7",
