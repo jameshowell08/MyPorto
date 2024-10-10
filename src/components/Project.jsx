@@ -1,5 +1,5 @@
 import { PROJECTS } from "../constants"
-import { motion } from "framer-motion"
+import { motion, px } from "framer-motion"
 
 const Project = () => {
   return (
@@ -39,11 +39,34 @@ const Project = () => {
               {project.technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="mr-2 rounded bg-neutral-100 px-2 py-1 text-sm font-medium text-purple-800"
+                  className="mr-2 mb-10 rounded bg-neutral-100 px-2 py-1 text-sm font-medium text-purple-800"
                 >
                   {tech}
                 </span>
               ))}
+              <br />
+              <div className="flex space-x-2 mt-4">
+                {project.preview && (
+                  <a
+                    href={project.preview}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=" rounded bg-purple-600 px-3 py-1 text-xs text-white hover:bg-purple-700"
+                  >
+                    Preview
+                  </a>
+                )}
+                {project.sourceCode && (
+                  <a
+                    href={project.sourceCode}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded bg-gray-600 px-3 py-1 text-xs text-white hover:bg-gray-700"
+                  >
+                    Source Code
+                  </a>
+                )}
+              </div>
             </motion.div>
           </div>
         ))}
