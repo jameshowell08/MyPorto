@@ -3,6 +3,7 @@ import project2 from "../assets/projects/project-3.jpg"
 import project3 from "../assets/projects/Toyz.png"
 import project4 from "../assets/projects/weatherapp.png"
 import project5 from "../assets/projects/RockPaperScissors.png"
+import project6 from "../assets/projects/Gemini-Clone.png"
 
 export const HERO_CONTENT = `I’m James Howell, currently pursuing my undergraduate degree at BINUS University. I’m passionate about learning and always strive to excel in my studies. With a diligent work ethic and a humble attitude, I approach every opportunity with enthusiasm and dedication. I believe in continuous growth and eagerly embrace new challenges.  I have worked on various types of projects involving Golang, Java, .NET, SQL, and React through my coursework, which has given me a solid foundation in my field. Having completed all the basics, I am now ready to learn more and take on advanced topics.`
 
@@ -51,6 +52,15 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS", "JS"],
     preview: "https://jameshowell08.github.io/Rock-Paper-Scissors/",
     sourceCode: "https://github.com/jameshowell08/Rock-Paper-Scissors",
+  },
+  {
+    title: "Gemini-Clone",
+    image: project6,
+    description:
+      "A website that clone Gemini Ai of Google using Gemini 1.5 flsh API for the services",
+    technologies: ["ReactJs", "API"],
+    preview: "https://chatbot-ql2f2fspx-james-projects-7c23eeb3.vercel.app",
+    sourceCode: "https://github.com/jameshowell08/chatbot",
   },
 ]
 
