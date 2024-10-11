@@ -47,7 +47,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ duration: 1.5 }}
-          href="www.linkedin.com/in/jameshowell08"
+          href="https://www.linkedin.com/in/jameshowell08/"
           className="border-b"
         >
           <BsLinkedin className="mt-4 text-3xl" />

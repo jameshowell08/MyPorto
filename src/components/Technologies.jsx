@@ -57,7 +57,7 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-2 border-neutral-500 p-4"
         >
-          <RiTailwindCssFill className="text-7xl text-cyan-400" />
+          <RiTailwindCssFill className="text-7xl text-blue-400" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.5)}
@@ -65,7 +65,15 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-2 border-neutral-500 p-4"
         >
-          <SiPython className="text-7xl text-cyan-400" />
+          <SiPython className="text-7xl text-blue-900" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-2 border-neutral-500 p-4"
+        >
+          <SiMysql className="text-7xl text-blue-700" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.5)}
@@ -73,7 +81,15 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-2 border-neutral-500 p-4"
         >
-          <SiMysql className="text-7xl text-cyan-400" />
+          <FaJava className="text-7xl text-red-500" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-2 border-neutral-500 p-4"
+        >
+          <BiLogoGoLang className="text-7xl text-cyan-300" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.5)}
@@ -81,7 +97,15 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-2 border-neutral-500 p-4"
         >
-          <FaJava className="text-7xl text-cyan-400" />
+          <TbBrandCpp className="text-7xl text-black" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-2 border-neutral-500 p-4"
+        >
+          <TbBrandCSharp className="text-7xl text-purple-600" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.5)}
@@ -89,7 +113,15 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-2 border-neutral-500 p-4"
         >
-          <BiLogoGoLang className="text-7xl text-cyan-400" />
+          <SiDotnet className="text-7xl text-lime-500" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-2 border-neutral-500 p-4"
+        >
+          <FaHtml5 className="text-7xl text-orange-600" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.5)}
@@ -97,47 +129,15 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-2 border-neutral-500 p-4"
         >
-          <TbBrandCpp className="text-7xl text-cyan-400" />
+          <RiJavascriptFill className="text-7xl text-yellow-400" />
         </motion.div>
         <motion.div
-          variants={iconVariants(2.5)}
+          variants={iconVariants(3)}
           initial="initial"
           animate="animate"
           className="rounded-2xl border-2 border-neutral-500 p-4"
         >
-          <TbBrandCSharp className="text-7xl text-cyan-400" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
-        >
-          <SiDotnet className="text-7xl text-cyan-400" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
-        >
-          <FaHtml5 className="text-7xl text-cyan-400" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
-        >
-          <RiJavascriptFill className="text-7xl text-cyan-400" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
-        >
-          <FaCss3Alt className="text-7xl text-cyan-400" />
+          <FaCss3Alt className="text-7xl text-blue-800" />
         </motion.div>
       </motion.div>
     </div>
