@@ -4,6 +4,7 @@ import project3 from "../assets/projects/Toyz.png"
 import project4 from "../assets/projects/weatherapp.png"
 import project5 from "../assets/projects/RockPaperScissors.png"
 import project6 from "../assets/projects/Gemini-Clone.png"
+import project7 from "../assets/projects/omnikasir.png"
 
 export const HERO_CONTENT = `I’m James Howell, currently pursuing my undergraduate degree at BINUS University. I’m passionate about learning and always strive to excel in my studies. With a diligent work ethic and a humble attitude, I approach every opportunity with enthusiasm and dedication. I believe in continuous growth and eagerly embrace new challenges.  I have worked on various types of projects involving Golang, Java, .NET, SQL, and React through my coursework, which has given me a solid foundation in my field. Having completed all the basics, I am now ready to learn more and take on advanced topics.`
 
@@ -18,22 +19,22 @@ export const PROJECTS = [
     sourceCode: "https://github.com/jameshowell08/Tufind-Backend",
   },
   {
-    title: "Make Up E-Commerce",
-    image: project2,
+    title: "Omnikasir",
+    image: project7,
     description:
-      "A simple E-Commerce website that sell Make Up. This is my project for Pattern Software Design Lab assignment",
-    technologies: ["C#", ".NET", "MySQL", "HTML"],
-    preview: "https://github.com/jameshowell08/PSD_LAB",
-    sourceCode: "https://github.com/jameshowell08/PSD_LAB",
+      "A Point of sale web application that integrated offline and online transactions management system",
+    technologies: ["Next.js", "PosgreSQL", "Prisma"],
+    preview: "https://web-omnikasir.vercel.app/",
+    sourceCode: "https://github.com/jameshowell08/web-omnikasir",
   },
   {
-    title: "ToyZ",
-    image: project3,
+    title: "Gemini-Clone",
+    image: project6,
     description:
-      "A Simple Website to sell Toys. This is my project for HCI project AOL",
-    technologies: ["HTML", "CSS", "JS"],
-    preview: "https://github.com/jameshowell08/TOYZ",
-    sourceCode: "https://github.com/jameshowell08/TOYZ",
+      "A website that clone Gemini Ai of Google using Gemini 1.5 flsh API for the services",
+    technologies: ["ReactJs", "API"],
+    preview: "https://chatbot-ql2f2fspx-james-projects-7c23eeb3.vercel.app",
+    sourceCode: "https://github.com/jameshowell08/chatbot",
   },
   {
     title: "WeatherApp",
@@ -54,13 +55,22 @@ export const PROJECTS = [
     sourceCode: "https://github.com/jameshowell08/Rock-Paper-Scissors",
   },
   {
-    title: "Gemini-Clone",
-    image: project6,
+    title: "Make Up E-Commerce",
+    image: project2,
     description:
-      "A website that clone Gemini Ai of Google using Gemini 1.5 flsh API for the services",
-    technologies: ["ReactJs", "API"],
-    preview: "https://chatbot-ql2f2fspx-james-projects-7c23eeb3.vercel.app",
-    sourceCode: "https://github.com/jameshowell08/chatbot",
+      "A simple E-Commerce website that sell Make Up. This is my project for Pattern Software Design Lab assignment",
+    technologies: ["C#", ".NET", "MySQL", "HTML"],
+    preview: "https://github.com/jameshowell08/PSD_LAB",
+    sourceCode: "https://github.com/jameshowell08/PSD_LAB",
+  },
+  {
+    title: "ToyZ",
+    image: project3,
+    description:
+      "A Simple Website to sell Toys. This is my project for HCI project AOL",
+    technologies: ["HTML", "CSS", "JS"],
+    preview: "https://github.com/jameshowell08/TOYZ",
+    sourceCode: "https://github.com/jameshowell08/TOYZ",
   },
 ]
 
