@@ -6,7 +6,7 @@ import project5 from "../assets/projects/RockPaperScissors.png"
 import project6 from "../assets/projects/Gemini-Clone.png"
 import project7 from "../assets/projects/omnikasir.png"
 
-export const HERO_CONTENT = `I’m James Howell, currently pursuing my undergraduate degree at BINUS University. I’m passionate about learning and always strive to excel in my studies. With a diligent work ethic and a humble attitude, I approach every opportunity with enthusiasm and dedication. I believe in continuous growth and eagerly embrace new challenges.  I have worked on various types of projects involving Golang, Java, .NET, SQL, and React through my coursework, which has given me a solid foundation in my field. Having completed all the basics, I am now ready to learn more and take on advanced topics.`
+export const HERO_CONTENT = `I’m James Howell, a Full Stack Software Developer based in Jakarta, Indonesia. I’m passionate about learning and always strive to excel in my studies. With a diligent work ethic and a humble attitude, I approach every opportunity with enthusiasm and dedication. I believe in continuous growth and eagerly embrace new challenges.  I have worked on various types of projects involving Golang, Java, .NET, SQL, and React, which has given me a solid foundation in my field.`
 
 export const PROJECTS = [
   {
