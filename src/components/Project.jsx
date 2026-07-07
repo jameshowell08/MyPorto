@@ -7,7 +7,8 @@ const Project = () => {
       {/* Judul Section dengan Animasi */}
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -30 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         className="my-20 text-center text-4xl font-bold tracking-tight text-purple-400"
       >
@@ -18,14 +19,15 @@ const Project = () => {
         {PROJECTS.map((project, index) => (
           <div
             key={index}
-            className="group flex flex-wrap lg:justify-center items-start gap-12"
+            className="group grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start"
           >
             {/* Bagian Gambar: Menjamin Ukuran Seragam (Uniform Size) */}
             <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.8 }}
-              className="w-full lg:w-1/3"
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="w-full"
             >
               {/* Container dengan Rasio Aspek 16:9 Tetap */}
               <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-2xl ring-1 ring-neutral-700">
@@ -42,16 +44,17 @@ const Project = () => {
 
             {/* Bagian Deskripsi Proyek */}
             <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: 100 }}
-              transition={{ duration: 0.8 }}
-              className="w-full max-w-xl lg:w-2/3 flex flex-col"
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="w-full lg:col-span-2 flex flex-col"
             >
               <h5 className="mb-3 text-2xl font-bold text-black group-hover:text-purple-400 transition-colors">
                 {project.title}
               </h5>
 
-              <p className="mb-6 text-neutral-400 leading-relaxed text-justify lg:text-left">
+              <p className="mb-6 text-neutral-600 leading-relaxed text-justify lg:text-left">
                 {project.description}
               </p>
 
@@ -59,8 +62,8 @@ const Project = () => {
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.technologies.map((tech, techIndex) => (
                   <span
-                    key={techIndex}
-                    className="rounded-full bg-neutral-900 border border-neutral-800 px-3 py-1 text-xs font-medium text-purple-300 shadow-sm"
+                     key={techIndex}
+                     className="rounded-full bg-neutral-900 border border-neutral-800 px-3 py-1 text-xs font-medium text-purple-300 shadow-sm"
                   >
                     {tech}
                   </span>
@@ -68,7 +71,7 @@ const Project = () => {
               </div>
 
               {/* Tombol Aksi (Preview & Code) */}
-              <div className="flex gap-4 mt-auto">
+              <div className="flex flex-wrap gap-4 mt-auto">
                 {project.preview && (
                   <a
                     href={project.preview}
@@ -99,3 +102,4 @@ const Project = () => {
 }
 
 export default Project
+

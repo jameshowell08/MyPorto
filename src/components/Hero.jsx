@@ -2,9 +2,9 @@ import { HERO_CONTENT } from "../constants"
 import { motion } from "framer-motion"
 
 const container = (delay) => ({
-  hidden: { x: -100, opacity: 0 },
+  hidden: { y: 30, opacity: 0 },
   visible: {
-    x: 0,
+    y: 0,
     opacity: 1,
     transition: { duration: 0.5, delay: delay },
   },
@@ -14,8 +14,8 @@ const Hero = () => {
   return (
     <div className="border-b border-neutral-900 pb-4 lg:mb-35">
       <div className="flex flex-wrap">
-        <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center lg:items-start">
+        <div className="w-full">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <motion.h1
               variants={container(0)}
               initial="hidden"
@@ -28,7 +28,7 @@ const Hero = () => {
               variants={container(0.5)}
               initial="hidden"
               animate="visible"
-              className="bg-gradient-to-r from-pink-300 cia-slate-599 to bg-purple-500 bg bg-clip-text text-4xl tracking-tight text-transparent"
+              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl sm:text-4xl tracking-tight text-transparent"
             >
               Software Engineer
             </motion.span>
@@ -36,10 +36,25 @@ const Hero = () => {
               variants={container(1)}
               initial="hidden"
               animate="visible"
-              className="my-2 max-w-xl py-6 font-light tracking-tighter"
+              className="my-2 max-w-4xl py-6 font-light tracking-tighter text-neutral-600 leading-relaxed text-justify lg:text-left"
             >
               {HERO_CONTENT}
             </motion.p>
+            <motion.div
+              variants={container(1.2)}
+              initial="hidden"
+              animate="visible"
+              className="mb-8"
+            >
+              <a
+                href={`${import.meta.env.BASE_URL}CV_James_Howell.pdf`}
+                download="CV_James_Howell.pdf"
+                className="inline-flex items-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]"
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse"></span>
+                Download CV
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -48,3 +63,4 @@ const Hero = () => {
 }
 
 export default Hero
+
