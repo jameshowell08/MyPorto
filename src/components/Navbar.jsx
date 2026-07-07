@@ -33,7 +33,7 @@ const Navbar = () => {
           repeat={Infinity}
         />
       </div>
-      <div className="flex items-center">
+      {/* <div className="flex items-center">
         <a
           href={`${import.meta.env.BASE_URL}CV_James_Howell.pdf`}
           download="CV_James_Howell.pdf"
@@ -41,7 +41,7 @@ const Navbar = () => {
         >
           Download CV
         </a>
-      </div>
+      </div> */}
     </nav>
   )
 }
