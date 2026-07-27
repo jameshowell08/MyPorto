@@ -1,10 +1,30 @@
-import project1 from "../assets/projects/Tufind.png"
-import project7 from "../assets/projects/omnikasir.png"
+import projectTufind from "../assets/projects/Tufind.png"
+import projectOmnikasir from "../assets/projects/omnikasir.png"
 import projectMockInterview from "../assets/projects/mockinterview-ai.png"
+import projectNao from "../assets/projects/nao.png"
+import projectiFinance from "../assets/projects/iFinance.png"
 
-export const HERO_CONTENT = `I’m James Howell, a Full Stack Software Developer based in Jakarta, Indonesia. I’m passionate about learning and always strive to excel in my studies. With a diligent work ethic and a humble attitude, I approach every opportunity with enthusiasm and dedication. I believe in continuous growth and eagerly embrace new challenges.  I have worked on various types of projects involving Golang, Java, .NET, SQL, and React, which has given me a solid foundation in my field.`
+export const HERO_CONTENT = `I’m James Howell, a Full-Stack Software Engineer experienced in building scalable web applications using C#/.NET, Go, and modern frontend technologies. Skilled in designing RESTful APIs, optimizing databases, and developing responsive user experiences. Currently expanding expertise in AI application development by integrating Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), vector databases, and AI APIs into production-ready software.`
 
 export const PROJECTS = [
+  {
+    title: "Nao [ON PROGRESS]",
+    image: projectNao,
+    description:
+      "Nao is an AI-powered knowledge platform that leverages Retrieval-Augmented Generation (RAG) to transform Markdown-based documentation into a conversational assistant. Built with FastAPI, Next.js, and Supabase pgvector, it automatically synchronizes knowledge from GitHub, performs semantic retrieval, and generates source-grounded responses using large language models.",
+    technologies: ["FastAPI", "TypeScript", "Gemini API", "Supabase"],
+    preview: "https://github.com/jameshowell08/nao-frontend",
+    sourceCode: "https://github.com/jameshowell08/nao-frontend",
+  },
+  {
+    title: "iFinance",
+    image: projectiFinance,
+    description:
+      "iFinance is a personal finance management application that enables users to track expenses, manage budgets, and analyze spending patterns through interactive dashboards and financial reports. The application emphasizes responsive user experience, secure data management, and scalable full-stack architecture for personal financial planning.",
+    technologies: ["React Native"],
+    preview: "https://github.com/jameshowell08/iFinance",
+    sourceCode: "https://github.com/jameshowell08/iFinance",
+  },
   {
     title: "MockInterviewAI",
     image: projectMockInterview,
@@ -16,7 +36,7 @@ export const PROJECTS = [
   },
   {
     title: "Omnikasir",
-    image: project7,
+    image: projectOmnikasir,
     description:
       "A Point of sale web application that integrated offline and online transactions management system",
     technologies: ["Next.js", "PosgreSQL", "Prisma"],
@@ -25,7 +45,7 @@ export const PROJECTS = [
   },
   {
     title: "TuFind",
-    image: project1,
+    image: projectTufind,
     description:
       "A Mobile application that connects Private tutors and Students",
     technologies: ["Flutter", "GoLang", "MySQL"],
@@ -35,7 +55,7 @@ export const PROJECTS = [
 ]
 
 export const CONTACT = {
-  phoneNo: "+628991726900 ",
+  phoneNo: "+6281210815151",
   email: "howelljamescong@gmail.com",
 }
 
