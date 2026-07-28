@@ -3,14 +3,14 @@ import { motion } from "framer-motion"
 
 const Project = () => {
   return (
-    <div className="border-b border-neutral-900 pb-20">
+    <div className="border-b border-neutral-200 dark:border-neutral-800 pb-20 transition-colors duration-300">
       {/* Judul Section dengan Animasi */}
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -30 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="my-20 text-center text-4xl font-bold tracking-tight text-purple-400"
+        className="my-20 text-center text-4xl font-bold tracking-tight text-purple-600 dark:text-purple-400"
       >
         Featured Projects
       </motion.h2>
@@ -30,7 +30,7 @@ const Project = () => {
               className="w-full"
             >
               {/* Container dengan Rasio Aspek 16:9 Tetap */}
-              <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-2xl ring-1 ring-neutral-700">
+              <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-800 shadow-xl ring-1 ring-neutral-200 dark:ring-neutral-700/60">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -50,11 +50,11 @@ const Project = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="w-full lg:col-span-2 flex flex-col"
             >
-              <h5 className="mb-3 text-2xl font-bold text-black group-hover:text-purple-400 transition-colors">
+              <h5 className="mb-3 text-2xl font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                 {project.title}
               </h5>
 
-              <p className="mb-6 text-neutral-600 leading-relaxed text-justify lg:text-left">
+              <p className="mb-6 text-neutral-600 dark:text-neutral-400 leading-relaxed text-justify lg:text-left">
                 {project.description}
               </p>
 
@@ -62,8 +62,8 @@ const Project = () => {
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.technologies.map((tech, techIndex) => (
                   <span
-                     key={techIndex}
-                     className="rounded-full bg-neutral-900 border border-neutral-800 px-3 py-1 text-xs font-medium text-purple-300 shadow-sm"
+                    key={techIndex}
+                    className="rounded-full bg-purple-50 dark:bg-neutral-900 border border-purple-200 dark:border-neutral-800 px-3 py-1 text-xs font-medium text-purple-700 dark:text-purple-300 shadow-sm"
                   >
                     {tech}
                   </span>
@@ -87,7 +87,7 @@ const Project = () => {
                     href={project.sourceCode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-lg border border-neutral-700 bg-neutral-950 px-6 py-2 text-sm font-semibold text-neutral-300 transition-all hover:bg-neutral-800 hover:text-white"
+                    className="rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-6 py-2 text-sm font-semibold text-neutral-700 dark:text-neutral-300 shadow-sm transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white"
                   >
                     Source Code
                   </a>

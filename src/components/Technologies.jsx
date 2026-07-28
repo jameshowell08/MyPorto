@@ -27,14 +27,17 @@ const iconVariants = (duration) => ({
 })
 
 const Technologies = () => {
+  const cardClass =
+    "rounded-2xl border-2 border-neutral-300 dark:border-neutral-700 bg-white/50 dark:bg-neutral-900/50 p-4 transition-all duration-300 hover:border-purple-500 dark:hover:border-purple-400 shadow-sm"
+
   return (
-    <div className="border-b border-neutral-800 pb-24">
+    <div className="border-b border-neutral-200 dark:border-neutral-800 pb-24 transition-colors duration-300">
       <motion.h1
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -30 }}
         viewport={{ once: true }}
         transition={{ duration: 1.0 }}
-        className="my-20 text-center text-4xl"
+        className="my-20 text-center text-4xl text-neutral-900 dark:text-neutral-100 font-semibold"
       >
         Technologies
       </motion.h1>
@@ -49,39 +52,39 @@ const Technologies = () => {
           variants={iconVariants(2.5)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <RiReactjsLine className="text-7xl text-cyan-400" />
+          <RiReactjsLine className="text-7xl text-cyan-500 dark:text-cyan-400" />
         </motion.div>
         <motion.div
           variants={iconVariants(3)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <RiTailwindCssFill className="text-7xl text-blue-400" />
+          <RiTailwindCssFill className="text-7xl text-sky-500 dark:text-sky-400" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.5)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <SiPython className="text-7xl text-blue-900" />
+          <SiPython className="text-7xl text-blue-600 dark:text-blue-400" />
         </motion.div>
         <motion.div
           variants={iconVariants(3)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <SiMysql className="text-7xl text-blue-700" />
+          <SiMysql className="text-7xl text-blue-700 dark:text-blue-400" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.5)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
           <FaJava className="text-7xl text-red-500" />
         </motion.div>
@@ -89,57 +92,57 @@ const Technologies = () => {
           variants={iconVariants(3)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <BiLogoGoLang className="text-7xl text-cyan-300" />
+          <BiLogoGoLang className="text-7xl text-cyan-600 dark:text-cyan-300" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.5)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <TbBrandCpp className="text-7xl text-black" />
+          <TbBrandCpp className="text-7xl text-blue-800 dark:text-blue-300" />
         </motion.div>
         <motion.div
           variants={iconVariants(3)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <TbBrandCSharp className="text-7xl text-purple-600" />
+          <TbBrandCSharp className="text-7xl text-purple-600 dark:text-purple-400" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.5)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <SiDotnet className="text-7xl text-lime-500" />
+          <SiDotnet className="text-7xl text-purple-700 dark:text-lime-400" />
         </motion.div>
         <motion.div
           variants={iconVariants(3)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <FaHtml5 className="text-7xl text-orange-600" />
+          <FaHtml5 className="text-7xl text-orange-600 dark:text-orange-500" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.5)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <RiJavascriptFill className="text-7xl text-yellow-400" />
+          <RiJavascriptFill className="text-7xl text-amber-500 dark:text-yellow-400" />
         </motion.div>
         <motion.div
           variants={iconVariants(3)}
           initial="initial"
           animate="animate"
-          className="rounded-2xl border-2 border-neutral-500 p-4"
+          className={cardClass}
         >
-          <FaCss3Alt className="text-7xl text-blue-800" />
+          <FaCss3Alt className="text-7xl text-blue-600 dark:text-blue-400" />
         </motion.div>
       </motion.div>
     </div>

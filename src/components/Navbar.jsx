@@ -1,8 +1,9 @@
 import logo from "../assets/JHLogo.svg"
 import GraphemeSplitter from "grapheme-splitter"
 import { TypeAnimation } from "react-type-animation"
+import { FiSun, FiMoon } from "react-icons/fi"
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   const splitter = new GraphemeSplitter()
 
   return (
@@ -29,19 +30,23 @@ const Navbar = () => {
             "नमस्ते 🇮🇳",
             2000,
           ]}
-          className="text-xl sm:text-2xl md:text-3xl font-semibold text-neutral-800"
+          className="text-xl sm:text-2xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-100"
           repeat={Infinity}
         />
       </div>
-      {/* <div className="flex items-center">
-        <a
-          href={`${import.meta.env.BASE_URL}CV_James_Howell.pdf`}
-          download="CV_James_Howell.pdf"
-          className="rounded-full border border-neutral-300 bg-white px-5 py-2 text-sm font-semibold text-neutral-700 shadow-sm transition-all hover:bg-neutral-50 hover:text-purple-600 hover:border-purple-300"
+      <div className="flex items-center gap-4">
+        <button
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+          className="p-2.5 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 text-neutral-700 dark:text-neutral-200 shadow-sm transition-all duration-300 hover:scale-110 hover:border-purple-400 dark:hover:border-purple-400 focus:outline-none"
         >
-          Download CV
-        </a>
-      </div> */}
+          {theme === "dark" ? (
+            <FiSun className="text-xl text-yellow-400 transition-transform duration-300" />
+          ) : (
+            <FiMoon className="text-xl text-purple-600 transition-transform duration-300" />
+          )}
+        </button>
+      </div>
     </nav>
   )
 }

@@ -12,7 +12,7 @@ const container = (delay) => ({
 
 const Hero = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-35">
+    <div className="border-b border-neutral-200 dark:border-neutral-800 pb-4 lg:mb-35 transition-colors duration-300">
       <div className="flex flex-wrap">
         <div className="w-full">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -20,7 +20,7 @@ const Hero = () => {
               variants={container(0)}
               initial="hidden"
               animate="visible"
-              className="pb-16 text-6xl font-semibold tracking-tight lg:mt-16 lg:text-8xl"
+              className="pb-16 text-6xl font-semibold tracking-tight lg:mt-16 lg:text-8xl text-neutral-900 dark:text-neutral-100"
             >
               James Howell
             </motion.h1>
@@ -28,7 +28,7 @@ const Hero = () => {
               variants={container(0.5)}
               initial="hidden"
               animate="visible"
-              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl sm:text-4xl tracking-tight text-transparent"
+              className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 dark:from-pink-300 dark:via-slate-400 dark:to-purple-400 bg-clip-text text-3xl sm:text-4xl tracking-tight text-transparent"
             >
               Software Engineer
             </motion.span>
@@ -36,7 +36,7 @@ const Hero = () => {
               variants={container(1)}
               initial="hidden"
               animate="visible"
-              className="my-2 max-w-4xl py-6 font-light tracking-tighter text-neutral-600 leading-relaxed text-justify lg:text-left"
+              className="my-2 max-w-4xl py-6 font-light tracking-tighter text-neutral-600 dark:text-neutral-400 leading-relaxed text-justify lg:text-left"
             >
               {HERO_CONTENT}
             </motion.p>
