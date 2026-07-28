@@ -13,7 +13,7 @@ export const PROJECTS = [
     description:
       "Nao is an AI-powered knowledge platform that leverages Retrieval-Augmented Generation (RAG) to transform Markdown-based documentation into a conversational assistant. Built with FastAPI, Next.js, and Supabase pgvector, it automatically synchronizes knowledge from GitHub, performs semantic retrieval, and generates source-grounded responses using large language models.",
     technologies: ["FastAPI", "TypeScript", "Gemini API", "Supabase"],
-    preview: "https://github.com/jameshowell08/nao-frontend",
+    preview: "https://nao-frontend.vercel.app/chat",
     sourceCode: "https://github.com/jameshowell08/nao-frontend",
   },
   {
