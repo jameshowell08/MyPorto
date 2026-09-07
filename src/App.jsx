@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { AnimatePresence } from "framer-motion"
 import Navbar from "./components/Navbar"
 import HomeView from "./components/views/HomeView"
@@ -66,7 +66,7 @@ const App = () => {
   const renderActiveView = () => {
     switch (activeTab) {
       case "home":
-        return <HomeView key="home" onNavigate={handleTabChange} />
+        return <HomeView key="home" onNavigate={handleTabChange} theme={theme} toggleTheme={toggleTheme} />
       case "about":
         return <AboutView key="about" />
       case "experience":
@@ -76,7 +76,7 @@ const App = () => {
       case "contact":
         return <ContactView key="contact" />
       default:
-        return <HomeView key="home" onNavigate={handleTabChange} />
+        return <HomeView key="home" onNavigate={handleTabChange} theme={theme} toggleTheme={toggleTheme} />
     }
   }
 
