@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { CONTACT } from "../../constants"
-import { FiMail, FiMapPin, FiSend, FiCopy, FiCheck, FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi"
+import { FiMail, FiMapPin, FiSend, FiCopy, FiCheck, FiGithub, FiLinkedin, FiInstagram, FiAlertCircle } from "react-icons/fi"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,14 +27,7 @@ const ContactView = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [copied, setCopied] = useState(false)
   const [isDropping, setIsDropping] = useState(false)
-  const [droppedLetters, setDroppedLetters] = useState([
-    {
-      id: "initial-welcome",
-      name: "Portfolio Visitor",
-      time: "Just now",
-      preview: "Looking forward to collaborating on AI & Full-Stack projects!",
-    },
-  ])
+  const [statusMessage, setStatusMessage] = useState(null)
 
   const copyEmail = () => {
     navigator.clipboard.writeText(CONTACT.email)
@@ -42,36 +35,63 @@ const ContactView = () => {
     setTimeout(() => setCopied(false), 2000)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!formData.name || !formData.email || !formData.message) return
 
     setIsDropping(true)
+    setStatusMessage(null)
 
-    // Construct mailto link
-    const subject = encodeURIComponent(`Portfolio Message from ${formData.name}`)
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )
-    const mailtoUrl = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`
+    const formDataObj = new FormData()
+    formDataObj.append("name", formData.name)
+    formDataObj.append("email", formData.email)
+    formDataObj.append("message", formData.message)
+    formDataObj.append("_subject", `New Portfolio Message from ${formData.name}`)
+    formDataObj.append("_template", "table")
+    formDataObj.append("_captcha", "false")
 
-    // Animate envelope drop and store dropped letter in the stack
-    setTimeout(() => {
-      setDroppedLetters((prev) => [
-        {
-          id: Date.now().toString(),
-          name: formData.name,
-          time: "Delivered just now",
-          preview: formData.message.slice(0, 75) + (formData.message.length > 75 ? "..." : ""),
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT.email}`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
         },
-        ...prev,
-      ])
-      setIsDropping(false)
-      setFormData({ name: "", email: "", message: "" })
+        body: formDataObj,
+      })
 
-      // Open email client
-      window.open(mailtoUrl, "_blank")
-    }, 1200)
+      const data = await response.json()
+
+      if (response.ok && (data.success === "true" || data.success === true)) {
+        setTimeout(() => {
+          setIsDropping(false)
+          setStatusMessage({
+            type: "success",
+            text: `Message delivered! Your email was successfully sent to ${CONTACT.email}.`,
+          })
+          setFormData({ name: "", email: "", message: "" })
+        }, 1100)
+      } else if (data.message && data.message.toLowerCase().includes("activation")) {
+        // FormSubmit requires the user to click the activation email once
+        setTimeout(() => {
+          setIsDropping(false)
+          setStatusMessage({
+            type: "activation",
+            text: `Activation email sent! FormSubmit sent an 'Activate Form' link to ${CONTACT.email}. Please open that email and click the button once, and your portfolio will be fully activated for direct delivery!`,
+          })
+        }, 1000)
+      } else {
+        throw new Error(data.message || "Failed to submit form")
+      }
+    } catch (err) {
+      console.error("Email submission error:", err)
+      setTimeout(() => {
+        setIsDropping(false)
+        setStatusMessage({
+          type: "error",
+          text: `Could not send via automated server. You can email directly at ${CONTACT.email}.`,
+        })
+      }, 1000)
+    }
   }
 
   return (
@@ -175,43 +195,6 @@ const ContactView = () => {
             {/* Mailbox Pedestal Base */}
             <div className="w-32 h-2.5 bg-neutral-200 dark:bg-neutral-800 rounded-full"></div>
           </div>
-
-          {/* Dropped Mail Tray (Letters that stay on page) */}
-          <div className="w-full mt-6 pt-5 border-t border-neutral-100 dark:border-neutral-800">
-            <div className="flex items-center justify-between text-xs font-medium text-neutral-500 dark:text-neutral-400 mb-3">
-              <span>Delivered Letters ({droppedLetters.length})</span>
-              <span className="text-[11px] text-purple-600 dark:text-purple-400">Stored on page</span>
-            </div>
-
-            <div className="space-y-2.5 max-h-48 overflow-y-auto pr-1">
-              <AnimatePresence initial={false}>
-                {droppedLetters.map((letter) => (
-                  <motion.div
-                    key={letter.id}
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    className="p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/60 text-left text-xs shadow-sm flex items-start gap-2.5"
-                  >
-                    <div className="p-1.5 rounded bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5">
-                      <FiMail />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold text-neutral-900 dark:text-neutral-100 truncate">
-                          {letter.name}
-                        </span>
-                        <span className="text-[10px] text-neutral-400">{letter.time}</span>
-                      </div>
-                      <p className="text-neutral-500 dark:text-neutral-400 text-[11px] line-clamp-1 mt-0.5">
-                        {letter.preview}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-          </div>
         </motion.div>
 
         {/* Right: Modern Minimalist Contact Form */}
@@ -271,13 +254,36 @@ const ContactView = () => {
               />
             </div>
 
+            {statusMessage && (
+              <motion.div
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`p-3.5 rounded-xl text-xs font-medium flex items-start gap-2.5 ${
+                  statusMessage.type === "success"
+                    ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20"
+                    : statusMessage.type === "activation"
+                    ? "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20"
+                    : "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20"
+                }`}
+              >
+                {statusMessage.type === "success" ? (
+                  <FiCheck className="text-base flex-shrink-0 mt-0.5" />
+                ) : statusMessage.type === "activation" ? (
+                  <FiMail className="text-base flex-shrink-0 mt-0.5" />
+                ) : (
+                  <FiAlertCircle className="text-base flex-shrink-0 mt-0.5" />
+                )}
+                <span className="leading-relaxed">{statusMessage.text}</span>
+              </motion.div>
+            )}
+
             <button
               type="submit"
               disabled={isDropping}
               className="w-full py-3.5 px-6 rounded-xl bg-purple-600 hover:bg-purple-500 active:scale-[0.99] text-white text-sm font-semibold shadow-md transition-all flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] disabled:opacity-50"
             >
               <FiSend className="text-base" />
-              <span>{isDropping ? "Dropping into Postbox..." : "Drop Mail into Postbox"}</span>
+              <span>{isDropping ? "Sending to Inbox..." : "Drop Mail into Postbox"}</span>
             </button>
           </form>
 
